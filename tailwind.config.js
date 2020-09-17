@@ -5,12 +5,8 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-      },
-    },
+    extend: {},
   },
-  variants: {opacity: ['responsive', 'hover', 'focus', 'disabled'],},
-  plugins: [require('@tailwindcss/ui')],
+  variants: {},
+  plugins: [],
 }

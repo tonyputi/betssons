@@ -13,9 +13,6 @@ class Movies extends React.Component {
     }
     componentDidMount() {
         this.getMovies();
-        // fetch('/movie.mock-data.json')
-        //     .then(response => response.json())
-        //     .then(data => this.setState({ data }));
     }
     getMovies(search) {
         fetch('/movie.mock-data.json')
@@ -23,41 +20,35 @@ class Movies extends React.Component {
             .then(data => {
                 if(search) {
                     let re = new RegExp("^" + search, "i");
-
                     data = data.filter(function(e) {
                         if(e.name.search(re) > -1) {
-                            console.log(e.name, search);
                             return e;
                         }
                     })
                 }
-
-                console.log(data);
                 this.setState({ data });
             });
-            // .then(data => this.setState({ data }));
     }
     render() {
         return (
             <div>
                 <h2>Movies</h2>
+            
+                <div class="container mx-auto">
+                    <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" 
+                        type="text" 
+                        placeholder="search for movie name"
+                        value={this.search} onChange={ev => this.getMovies(ev.target.value)} placeholder="search for movie name"/>
 
-                <input type="text" value={this.search} onChange={ev => this.getMovies(ev.target.value)} placeholder="search for movie name"/>
-          
-                {this.state.data.map((movie, index) => (
-                    <MovieCover key={index} movie={movie} />
-                ))}
-
-                {/* <Switch>
-                    <Route path="/movies/:id" children={<MovieDetail movie={movie} />} />
-                </Switch> */}
+                    <div class="grid grid-cols-3 gap-4 mt-6">
+                    {this.state.data.map((movie, index) => (
+                        <MovieCover key={index} movie={movie} />
+                    ))}
+                    </div>
+                </div>
             </div>
         );
     }
-}
-
-function getMovies() {
-        
 }
 
 export default Movies;
