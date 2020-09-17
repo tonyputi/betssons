@@ -9,6 +9,8 @@ import './App.css';
 
 import Home from "./Home.js"
 import Movies from "./Movies.js"
+import MovieDetail from "./MovieDetail.js"
+
 export default function App() {
   return (
     <Router>
@@ -22,7 +24,7 @@ export default function App() {
 
         <Switch>
           <Route path="/movies" children={<Movies />} />
-          {/* <Route path="/movies/:id" children={<MovieDetail />} /> */}
+          <Route path="/movies/:id" children={<MovieDetail />} />
           <Route path="/" children={<Home />} />
         </Switch>
       </div>

@@ -1,6 +1,14 @@
 import React from "react";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useParams
+  } from "react-router-dom";
 
 class MovieDetail extends React.Component {
+    // let { id } = useParams();
+
     render() {
         return (
             <div>
