@@ -31,20 +31,17 @@ class Movies extends React.Component {
     }
     render() {
         return (
-            <div>
-                <h2>Movies</h2>
-            
-                <div class="container mx-auto">
-                    <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" 
-                        type="text" 
-                        placeholder="search for movie name"
-                        value={this.search} onChange={ev => this.getMovies(ev.target.value)} placeholder="search for movie name"/>
+            <div class="container mx-auto">
+                <h2 class="mb-4 mt-4 text-2xl">Movies</h2>
+                <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" 
+                    type="text" 
+                    placeholder="search for movie name"
+                    value={this.search} onChange={ev => this.getMovies(ev.target.value)} placeholder="search for movie name"/>
 
-                    <div class="grid grid-cols-3 gap-4 mt-6">
-                    {this.state.data.map((movie, index) => (
-                        <MovieCover key={index} movie={movie} />
-                    ))}
-                    </div>
+                <div class="grid grid-cols-3 gap-4 mt-6">
+                {this.state.data.map((movie, index) => (
+                    <MovieCover key={index} movie={movie} />
+                ))}
                 </div>
             </div>
         );

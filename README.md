@@ -1,4 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and 
+implement a simple movie collection using components, implementing search on catalog and show details of movie.
+
+I've splitted the application in smalls components:
+- Home (basic home page)
+- Movies (representing the movies catalog)
+- MovieCover (used as component by Movies.js)
+- MovieDetail (showing the detail of movie)
+
+React router is used for the routing manipulation:
+
+- /
+- /movies
+- /movies/:id
+
+## Missed requirements
+
+Due to time related issue I've to delivery the working project in less than 24 hours so some requirement
+is not yet used.
+
+- use of redux
+- use of a hook
+
+Please consider also that this is the first time that I use ReactJs
+
+Created by Filippo Sallemi
+
+## Installation
+
+Clone the repository
+
+```
+git clone git@github.com:tonyputi/betssons.git
+cd betssons
+npm install
+```
 
 ## Available Scripts
 
